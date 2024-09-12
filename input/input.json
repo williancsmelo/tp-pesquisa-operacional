@@ -1,0 +1,37 @@
+{
+  "funcionarios": [
+    {
+      "nome": "ronaldo",
+      "salario": 1000,
+      "tempoMaximo": 80,
+      "experiente": true
+    }
+  ],
+  "dias": 5,
+  "turnos": [
+    {
+      "minimoFuncionarios": 1
+    },
+    {
+      "minimoFuncionarios": 1
+    },
+    {
+      "minimoFuncionarios": 1
+    },
+    {
+      "minimoFuncionarios": 1
+    },
+    {
+      "minimoFuncionarios": 1
+    },
+    {
+      "minimoFuncionarios": 1
+    },
+    {
+      "minimoFuncionarios": 1
+    },
+    {
+      "minimoFuncionarios": 1
+    }
+  ]
+}

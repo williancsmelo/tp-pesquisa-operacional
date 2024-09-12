@@ -1,38 +1,22 @@
 import Glpk from 'glpk.js'
+import { readInput } from './read-input'
+import { createProblem } from './create-vars'
 
 const main = async () => {
+  const data = readInput(process.argv[2])
   const glpk = Glpk()
-
-  return
+  const problem = createProblem(data, glpk)
   const res = glpk.solve(
     {
       name: 'LP',
       objective: {
         direction: glpk.GLP_MAX,
-        name: 'obj',
-        vars: [
-          { name: 'x1', coef: 0.6 },
-          { name: 'x2', coef: 0.5 }
-        ]
+        name: 'lucro',
+        vars: problem.objective
       },
-      subjectTo: [
-        {
-          name: 'cons1',
-          vars: [
-            { name: 'x1', coef: 1.0 },
-            { name: 'x2', coef: 2.0 }
-          ],
-          bnds: { type: glpk.GLP_UP, ub: 1.0, lb: 0.0 }
-        },
-        {
-          name: 'cons2',
-          vars: [
-            { name: 'x1', coef: 3.0 },
-            { name: 'x2', coef: 1.0 }
-          ],
-          bnds: { type: glpk.GLP_UP, ub: 2.0, lb: 0.0 }
-        }
-      ]
+      subjectTo: problem.subjectTo,
+      generals: problem.integerVars,
+      binaries: problem.binaryVars
     },
     {
       msglev: glpk.GLP_MSG_ALL,
@@ -43,6 +27,7 @@ const main = async () => {
       }
     }
   )
+  return res
 }
 
 main().then(res => res !== undefined && console.log(res))
