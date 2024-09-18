@@ -1,2 +1,13 @@
 export const TEMPO_POR_TURNO = 2
+export const TEMPO_POR_AULA = 1
+export const AULAS_SIMULTANEAS = 1
+export const AULAS_REPETIDAS_DIARIAS = 2
 export const RELACAO_EXPERIENTE = 50 // porcentagem
+
+export enum VarsNames {
+  CONTRATADO = 'CONTRATADO',
+  ALOCADO = 'ALOCADO',
+  MINISTRA = 'MINISTRA',
+  AULA = 'AULA',
+  PROFESSOR_CONTRATADO = 'PROFESSOR_CONTRATADO'
+}
