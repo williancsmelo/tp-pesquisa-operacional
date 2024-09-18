@@ -1,224 +1,224 @@
 {
-  "lucro": -1600,
+  "lucro": -1200,
   "funcionariosContratados": [
-    "ronaldo"
+    "nome"
   ],
   "escala": {
     "dia 1": {
       "turno 1": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ],
         "aula": {
-          "nome": "aula1",
+          "nome": "aula",
           "professorContratado": true
         }
       },
       "turno 2": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ],
         "aula": {
-          "nome": "aula1",
+          "nome": "aula",
           "professorContratado": true
         }
       },
       "turno 3": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 4": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 5": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 6": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 7": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 8": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       }
     },
     "dia 2": {
       "turno 1": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 2": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 3": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 4": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 5": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 6": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 7": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 8": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       }
     },
     "dia 3": {
       "turno 1": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 2": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 3": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 4": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 5": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 6": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 7": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 8": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       }
     },
     "dia 4": {
       "turno 1": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 2": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 3": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 4": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 5": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 6": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 7": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 8": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       }
     },
     "dia 5": {
       "turno 1": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 2": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 3": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 4": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 5": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 6": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 7": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       },
       "turno 8": {
         "funcionariosAlocados": [
-          "ronaldo"
+          "nome"
         ]
       }
     }

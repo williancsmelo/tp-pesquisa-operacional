@@ -35,10 +35,11 @@ export const createProblem = (data: Input, glpk: GLPK): Problem => {
           name: `${VarsNames.AULA}:${idAula}:${dia}:${idTurno}`,
           coef: aula.precoPorAluno * aula.alunosEsperados
         })
-        objective.push({
-          name: `${VarsNames.PROFESSOR_CONTRATADO}:${idAula}:${dia}:${idTurno}`,
-          coef: -1 * aula.custoProfessor
-        })
+        if (aula.custoProfessor > 0)
+          objective.push({
+            name: `${VarsNames.PROFESSOR_CONTRATADO}:${idAula}:${dia}:${idTurno}`,
+            coef: -1 * aula.custoProfessor
+          })
       })
     })
   })
@@ -94,10 +95,12 @@ export const createProblem = (data: Input, glpk: GLPK): Problem => {
     data.turnos.forEach((turno, idTurno) => {
       subjectTo.push({
         name: `experiencia:${dia}:${idTurno}`,
-        vars: data.funcionarios.map((funcionario, idFuncionario) => ({
-          name: `${VarsNames.ALOCADO}:${idFuncionario}:${dia}:${idTurno}`,
-          coef: +funcionario.experiente
-        })),
+        vars: data.funcionarios
+          .filter(funcionario => funcionario.experiente)
+          .map((_, idFuncionario) => ({
+            name: `${VarsNames.ALOCADO}:${idFuncionario}:${dia}:${idTurno}`,
+            coef: 1
+          })),
         bnds: {
           type: glpk.GLP_LO,
           ub: data.funcionarios.length,
@@ -145,22 +148,24 @@ export const createProblem = (data: Input, glpk: GLPK): Problem => {
   })
 
   // Mínimo de aulas por semana
-  data.aulas.forEach((aula, idAula) => {
-    const vars: Problem['subjectTo'][number]['vars'] = []
-    subjectTo.push({
-      name: `aula-obrigatoria:${idAula}`,
-      vars,
-      bnds: { type: glpk.GLP_LO, lb: aula.minimoSemanal, ub: Infinity }
-    })
-    dias.forEach(dia => {
-      data.turnos.forEach((_, idTurno) => {
-        vars.push({
-          name: `${VarsNames.AULA}:${idAula}:${dia}:${idTurno}`,
-          coef: 1
+  data.aulas
+    .filter(aula => aula.minimoSemanal > 0)
+    .forEach((aula, idAula) => {
+      const vars: Problem['subjectTo'][number]['vars'] = []
+      dias.forEach(dia => {
+        data.turnos.forEach((_, idTurno) => {
+          vars.push({
+            name: `${VarsNames.AULA}:${idAula}:${dia}:${idTurno}`,
+            coef: 1
+          })
         })
       })
+      subjectTo.push({
+        name: `aula-obrigatoria:${idAula}`,
+        vars,
+        bnds: { type: glpk.GLP_LO, lb: aula.minimoSemanal, ub: data.turnos.length * dias.length }
+      })
     })
-  })
 
   // Limite de 2 aulas iguais por dia
   dias.forEach(dia => {
@@ -189,9 +194,9 @@ export const createProblem = (data: Input, glpk: GLPK): Problem => {
             }))
             .concat({
               name: `${VarsNames.AULA}:${idAula}:${dia}:${idTurno}`,
-              coef: -data.funcionarios.length
+              coef: -1 * data.funcionarios.length
             }),
-          bnds: { type: glpk.GLP_UP, lb: -Infinity, ub: 0 }
+          bnds: { type: glpk.GLP_UP, lb: -1 * data.funcionarios.length, ub: 0 }
         })
       })
     })
@@ -201,22 +206,26 @@ export const createProblem = (data: Input, glpk: GLPK): Problem => {
   dias.forEach(dia => {
     data.turnos.forEach((_, idTurno) => {
       data.aulas.forEach((aula, idAula) => {
+        const vars = data.funcionarios
+          .filter(funcionario => funcionario.aulas.includes(aula.nome))
+          .map((_, idFuncionario) => ({
+            name: `${VarsNames.MINISTRA}:${idFuncionario}:${idAula}:${dia}:${idTurno}`,
+            coef: 1
+          }))
+          .concat({
+            name: `${VarsNames.AULA}:${idAula}:${dia}:${idTurno}`,
+            coef: -1
+          })
+        if (aula.custoProfessor > 0)
+          vars.push({
+            name: pushReturn(`${VarsNames.PROFESSOR_CONTRATADO}:${idAula}:${dia}:${idTurno}`, binaryVars),
+            coef: +!!aula.custoProfessor
+          })
+
         subjectTo.push({
           name: `aula-se-ministra:${idAula}:${dia}:${idTurno}`,
-          vars: data.funcionarios
-            .map((funcionario, idFuncionario) => ({
-              name: `${VarsNames.MINISTRA}:${idFuncionario}:${idAula}:${dia}:${idTurno}`,
-              coef: +funcionario.aulas.includes(aula.nome)
-            }))
-            .concat({
-              name: pushReturn(`${VarsNames.PROFESSOR_CONTRATADO}:${idAula}:${dia}:${idTurno}`, binaryVars),
-              coef: aula.custoProfessor
-            })
-            .concat({
-              name: `${VarsNames.AULA}:${idAula}:${dia}:${idTurno}`,
-              coef: -1
-            }),
-          bnds: { type: glpk.GLP_LO, lb: 0, ub: Infinity }
+          vars,
+          bnds: { type: glpk.GLP_LO, lb: 0, ub: data.funcionarios.length + 1 }
         })
       })
     })

@@ -1,18 +1,18 @@
 {
   "funcionarios": [
     {
-      "nome": "ronaldo",
-      "salario": 1400,
+      "nome": "nome",
+      "salario": 1000,
       "tempoMaximo": 80,
       "experiente": true,
-      "aulas": ["aula1"]
+      "aulas": ["aula"]
     }
   ],
   "dias": 5,
   "turnos": [1, 1, 1, 1, 1, 1, 1, 1],
   "aulas": [
     {
-      "nome": "aula1",
+      "nome": "aula",
       "alunosEsperados": 10,
       "precoPorAluno": 30,
       "custoProfessor": 400,

@@ -18,64 +18,30 @@
       "nome": "Lucas",
       "salario": 1500,
       "tempoMaximo": 30,
-      "aulas": ["Spinning", "Dança"]
+      "aulas": ["Dança"]
     },
     {
       "nome": "Ana",
       "salario": 1600,
       "tempoMaximo": 25,
-      "aulas": ["Zumba", "HIIT"]
-    },
-    {
-      "nome": "Tiago",
-      "salario": 2400,
-      "tempoMaximo": 40,
-      "experiente": true,
-      "aulas": ["Boxe", "Muay Thai"]
+      "aulas": ["Zumba"]
     },
     {
       "nome": "Marina",
       "salario": 1900,
       "tempoMaximo": 38,
-      "experiente": true,
-      "aulas": ["Yoga", "Crossfit"]
-    },
-    {
-      "nome": "José",
-      "salario": 1750,
-      "tempoMaximo": 32,
-      "aulas": ["Funcional", "Spinning"]
-    },
-    {
-      "nome": "Paula",
-      "salario": 2000,
-      "tempoMaximo": 36,
-      "experiente": true,
-      "aulas": ["Pilates", "Funcional"]
-    },
-    {
-      "nome": "Gustavo",
-      "salario": 1650,
-      "tempoMaximo": 28,
-      "aulas": ["Zumba", "HIIT"]
-    },
-    {
-      "nome": "Lúcia",
-      "salario": 1850,
-      "tempoMaximo": 35,
-      "experiente": true,
-      "aulas": ["Yoga", "Dança"]
+      "aulas": ["Yoga"]
     },
     {
       "nome": "Bruno",
       "salario": 2100,
       "tempoMaximo": 40,
       "experiente": true,
-      "aulas": ["Crossfit", "Boxe"]
+      "aulas": ["Crossfit"]
     }
   ],
   "dias": 5,
-  "turnos": [2, 2, 2, 3, 3, 4, 3, 2],
+  "turnos": [1, 1, 2, 2, 2, 3, 2, 1],
   "aulas": [
     {
       "nome": "Dança",
@@ -92,49 +58,13 @@
     {
       "nome": "Pilates",
       "alunosEsperados": 12,
-      "precoPorAluno": 40,
-      "custoProfessor": 180
+      "precoPorAluno": 40
     },
     {
       "nome": "Yoga",
       "alunosEsperados": 18,
       "precoPorAluno": 35,
       "minimoSemanal": 3
-    },
-    {
-      "nome": "Spinning",
-      "alunosEsperados": 14,
-      "precoPorAluno": 25,
-      "custoProfessor": 120
-    },
-    {
-      "nome": "Zumba",
-      "alunosEsperados": 20,
-      "precoPorAluno": 30,
-      "minimoSemanal": 2
-    },
-    {
-      "nome": "HIIT",
-      "alunosEsperados": 8,
-      "precoPorAluno": 45,
-      "custoProfessor": 160
-    },
-    {
-      "nome": "Boxe",
-      "alunosEsperados": 9,
-      "precoPorAluno": 50,
-      "custoProfessor": 180
-    },
-    {
-      "nome": "Muay Thai",
-      "alunosEsperados": 10,
-      "precoPorAluno": 55
-    },
-    {
-      "nome": "Funcional",
-      "alunosEsperados": 12,
-      "precoPorAluno": 35,
-      "custoProfessor": 140
     }
   ]
 }

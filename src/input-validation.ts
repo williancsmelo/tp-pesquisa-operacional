@@ -2,6 +2,13 @@ import * as yup from 'yup'
 import { TEMPO_POR_TURNO } from './config'
 
 export const inputValidation = yup.object().shape({
+  dias: yup.number().integer().min(1).required(),
+  turnos: yup
+    .array()
+    .min(1)
+    .max(24 / TEMPO_POR_TURNO)
+    .of(yup.number().integer().min(0).required())
+    .required(),
   aulas: yup
     .array()
     .of(
@@ -30,13 +37,6 @@ export const inputValidation = yup.object().shape({
         aulas: yup.array().of(yup.string()).default([])
       })
     )
-    .required(),
-  dias: yup.number().integer().min(1).required(),
-  turnos: yup
-    .array()
-    .min(1)
-    .max(24 / TEMPO_POR_TURNO)
-    .of(yup.number().integer().min(0).required())
     .required()
 })
 
