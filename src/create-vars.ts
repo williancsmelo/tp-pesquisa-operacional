@@ -6,7 +6,9 @@ import {
   TEMPO_POR_AULA,
   AULAS_SIMULTANEAS,
   AULAS_REPETIDAS_DIARIAS,
-  VarsNames
+  VarsNames,
+  TEMPO_MAXIMO_DIARIO,
+  MAXIMO_TURNOS_CONSECUTIVOS
 } from './config'
 
 type Problem = {
@@ -15,6 +17,7 @@ type Problem = {
   integerVars?: LP['generals']
   binaryVars?: LP['binaries']
 }
+type Vars = Problem['subjectTo'][number]['vars']
 
 const pushReturn = <T>(value: T, arr: T[]): T => {
   arr.push(value)
@@ -62,9 +65,9 @@ export const createProblem = (data: Input, glpk: GLPK): Problem => {
     })
   })
 
-  // Máximo de tempo de trabalho por funcionário
+  // Máximo de tempo de trabalho semanal por funcionário
   data.funcionarios.forEach((funcionario, idFuncionario) => {
-    const vars: Problem['subjectTo'][number]['vars'] = []
+    const vars: Vars = []
     dias.forEach(dia => {
       data.turnos.forEach((_, idTurno) => {
         vars.push({
@@ -90,7 +93,59 @@ export const createProblem = (data: Input, glpk: GLPK): Problem => {
     })
   })
 
-  //Mínimo de funcionários experientes por turno
+  // Máximo de tempo de trabalho diário por funcionário
+  data.funcionarios.forEach((_, idFuncionario) => {
+    dias.forEach(dia => {
+      const vars: Vars = []
+      data.turnos.forEach((_, idTurno) => {
+        vars.push({
+          name: `${VarsNames.ALOCADO}:${idFuncionario}:${dia}:${idTurno}`,
+          coef: TEMPO_POR_TURNO
+        })
+        data.aulas.forEach((_, idAula) => {
+          vars.push({
+            name: `${VarsNames.MINISTRA}:${idFuncionario}:${idAula}:${dia}:${idTurno}`,
+            coef: TEMPO_POR_AULA
+          })
+        })
+      })
+      subjectTo.push({
+        name: `tempo-maximo-diario:${idFuncionario}:${dia}`,
+        bnds: { type: glpk.GLP_UP, ub: TEMPO_MAXIMO_DIARIO, lb: 0 },
+        vars
+      })
+    })
+  })
+
+  // // Máximo turnos consecutivos
+  dias.forEach(dia => {
+    data.funcionarios.forEach((funcionario, idFuncionario) => {
+      for (let i = 0; i < data.turnos.length - MAXIMO_TURNOS_CONSECUTIVOS + 1; i++) {
+        const vars: Vars = []
+        for (let j = 0; j < MAXIMO_TURNOS_CONSECUTIVOS + 1; j++) {
+          vars.push({
+            name: `${VarsNames.ALOCADO}:${idFuncionario}:${dia}:${i + j}`,
+            coef: 1
+          })
+          data.aulas
+            .filter(aula => funcionario.aulas.includes(aula.nome))
+            .forEach((_, idAula) => {
+              vars.push({
+                name: `${VarsNames.MINISTRA}:${idFuncionario}:${idAula}:${dia}:${i + j}`,
+                coef: 1
+              })
+            })
+        }
+        subjectTo.push({
+          name: `maximo-turnos-consecutivos:${idFuncionario}:${dia}:${i}`,
+          vars,
+          bnds: { type: glpk.GLP_UP, ub: MAXIMO_TURNOS_CONSECUTIVOS, lb: 0 }
+        })
+      }
+    })
+  })
+
+  // Mínimo de funcionários experientes por turno
   dias.forEach(dia => {
     data.turnos.forEach((turno, idTurno) => {
       subjectTo.push({
@@ -151,7 +206,7 @@ export const createProblem = (data: Input, glpk: GLPK): Problem => {
   data.aulas
     .filter(aula => aula.minimoSemanal > 0)
     .forEach((aula, idAula) => {
-      const vars: Problem['subjectTo'][number]['vars'] = []
+      const vars: Vars = []
       dias.forEach(dia => {
         data.turnos.forEach((_, idTurno) => {
           vars.push({
@@ -166,6 +221,20 @@ export const createProblem = (data: Input, glpk: GLPK): Problem => {
         bnds: { type: glpk.GLP_LO, lb: aula.minimoSemanal, ub: data.turnos.length * dias.length }
       })
     })
+
+  // Turnos sem aula
+  data.aulas.forEach((_, idAula) => {
+    dias.forEach(dia => {
+      subjectTo.push({
+        name: `turno-sem-aula:${idAula}:${dia}`,
+        bnds: { type: glpk.GLP_FX, lb: 0, ub: 0 },
+        vars: data.turnosSemAula.map(idTurno => ({
+          name: `${VarsNames.AULA}:${idAula}:${dia}:${idTurno - 1}`,
+          coef: 1
+        }))
+      })
+    })
+  })
 
   // Limite de 2 aulas iguais por dia
   dias.forEach(dia => {

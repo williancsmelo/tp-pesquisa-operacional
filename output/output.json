@@ -1,18 +1,18 @@
 {
-  "lucro": 4200,
+  "lucro": 1900,
   "funcionariosContratados": [
     "Ronaldo",
     "Carla",
     "Lucas",
     "Ana",
-    "Marina"
+    "Paula"
   ],
   "escala": {
     "dia 1": {
       "turno 1": {
         "funcionariosAlocados": [
           "Ronaldo",
-          "Ana"
+          "Paula"
         ],
         "aula": {
           "nome": "Dança",
@@ -21,18 +21,17 @@
       },
       "turno 2": {
         "funcionariosAlocados": [
-          "Carla"
+          "Lucas"
         ],
         "aula": {
-          "nome": "Dança",
+          "nome": "Crossfit",
           "professorContratado": true
         }
       },
       "turno 3": {
         "funcionariosAlocados": [
           "Ronaldo",
-          "Ana",
-          "Marina"
+          "Paula"
         ],
         "aula": {
           "nome": "Crossfit",
@@ -43,10 +42,10 @@
         "funcionariosAlocados": [
           "Carla",
           "Ana",
-          "Marina"
+          "Paula"
         ],
         "aula": {
-          "nome": "Yoga",
+          "nome": "Pilates",
           "funcionariosMinistram": [
             "Ronaldo"
           ]
@@ -54,34 +53,21 @@
       },
       "turno 5": {
         "funcionariosAlocados": [
-          "Carla",
-          "Ana",
-          "Marina"
-        ],
-        "aula": {
-          "nome": "Crossfit",
-          "professorContratado": true
-        }
-      },
-      "turno 6": {
-        "funcionariosAlocados": [
-          "Ronaldo",
           "Lucas",
-          "Ana",
-          "Marina"
+          "Ana"
         ],
         "aula": {
-          "nome": "Yoga",
+          "nome": "Spinning",
           "funcionariosMinistram": [
             "Carla"
           ]
         }
       },
-      "turno 7": {
+      "turno 6": {
         "funcionariosAlocados": [
+          "Carla",
           "Lucas",
-          "Ana",
-          "Marina"
+          "Paula"
         ],
         "aula": {
           "nome": "Pilates",
@@ -90,15 +76,26 @@
           ]
         }
       },
-      "turno 8": {
+      "turno 7": {
         "funcionariosAlocados": [
-          "Lucas"
+          "Ronaldo",
+          "Ana",
+          "Paula"
         ],
         "aula": {
-          "nome": "Pilates",
+          "nome": "Spinning",
           "funcionariosMinistram": [
-            "Ronaldo"
+            "Carla"
           ]
+        }
+      },
+      "turno 8": {
+        "funcionariosAlocados": [
+          "Ronaldo"
+        ],
+        "aula": {
+          "nome": "Dança",
+          "professorContratado": true
         }
       }
     },
@@ -108,61 +105,63 @@
           "Lucas"
         ],
         "aula": {
-          "nome": "Dança",
+          "nome": "Crossfit",
           "professorContratado": true
         }
       },
       "turno 2": {
         "funcionariosAlocados": [
-          "Lucas"
+          "Carla"
         ],
         "aula": {
-          "nome": "Yoga",
-          "funcionariosMinistram": [
-            "Ronaldo"
-          ]
+          "nome": "Crossfit",
+          "professorContratado": true
         }
       },
       "turno 3": {
         "funcionariosAlocados": [
           "Lucas",
-          "Marina"
+          "Ana"
         ],
         "aula": {
-          "nome": "Yoga",
+          "nome": "Spinning",
           "funcionariosMinistram": [
-            "Ronaldo"
+            "Carla"
           ]
         }
       },
       "turno 4": {
         "funcionariosAlocados": [
-          "Lucas",
-          "Ana"
+          "Carla",
+          "Ana",
+          "Paula"
         ],
         "aula": {
-          "nome": "Dança",
-          "professorContratado": true
+          "nome": "Pilates",
+          "funcionariosMinistram": [
+            "Ronaldo"
+          ]
         }
       },
       "turno 5": {
         "funcionariosAlocados": [
-          "Lucas",
-          "Ana"
+          "Carla",
+          "Ana",
+          "Paula"
         ],
         "aula": {
-          "nome": "Crossfit",
+          "nome": "Dança",
           "professorContratado": true
         }
       },
       "turno 6": {
         "funcionariosAlocados": [
           "Ronaldo",
-          "Lucas",
-          "Ana"
+          "Carla",
+          "Paula"
         ],
         "aula": {
-          "nome": "Crossfit",
+          "nome": "Dança",
           "professorContratado": true
         }
       },
@@ -172,33 +171,27 @@
           "Ana"
         ],
         "aula": {
-          "nome": "Pilates",
+          "nome": "Spinning",
           "funcionariosMinistram": [
-            "Ronaldo"
+            "Carla"
           ]
         }
       },
       "turno 8": {
         "funcionariosAlocados": [
-          "Lucas"
-        ],
-        "aula": {
-          "nome": "Pilates",
-          "funcionariosMinistram": [
-            "Ronaldo"
-          ]
-        }
+          "Ronaldo"
+        ]
       }
     },
     "dia 3": {
       "turno 1": {
         "funcionariosAlocados": [
-          "Carla"
+          "Lucas"
         ],
         "aula": {
-          "nome": "Yoga",
+          "nome": "Spinning",
           "funcionariosMinistram": [
-            "Ronaldo"
+            "Carla"
           ]
         }
       },
@@ -207,18 +200,20 @@
           "Lucas"
         ],
         "aula": {
-          "nome": "Crossfit",
+          "nome": "Dança",
           "professorContratado": true
         }
       },
       "turno 3": {
         "funcionariosAlocados": [
-          "Ronaldo",
+          "Lucas",
           "Ana"
         ],
         "aula": {
-          "nome": "Crossfit",
-          "professorContratado": true
+          "nome": "Spinning",
+          "funcionariosMinistram": [
+            "Ronaldo"
+          ]
         }
       },
       "turno 4": {
@@ -227,44 +222,36 @@
           "Ana"
         ],
         "aula": {
-          "nome": "Dança",
+          "nome": "Crossfit",
           "professorContratado": true
         }
       },
       "turno 5": {
         "funcionariosAlocados": [
-          "Carla",
-          "Marina"
+          "Lucas",
+          "Paula"
         ],
         "aula": {
-          "nome": "Pilates",
-          "funcionariosMinistram": [
-            "Ronaldo"
-          ]
+          "nome": "Dança",
+          "professorContratado": true
         }
       },
       "turno 6": {
         "funcionariosAlocados": [
           "Carla",
           "Lucas",
-          "Marina"
+          "Paula"
         ],
         "aula": {
-          "nome": "Dança",
+          "nome": "Crossfit",
           "professorContratado": true
         }
       },
       "turno 7": {
         "funcionariosAlocados": [
-          "Carla",
-          "Marina"
-        ],
-        "aula": {
-          "nome": "Yoga",
-          "funcionariosMinistram": [
-            "Ronaldo"
-          ]
-        }
+          "Ronaldo",
+          "Paula"
+        ]
       },
       "turno 8": {
         "funcionariosAlocados": [
@@ -275,10 +262,11 @@
     "dia 4": {
       "turno 1": {
         "funcionariosAlocados": [
-          "Ronaldo"
+          "Carla",
+          "Paula"
         ],
         "aula": {
-          "nome": "Crossfit",
+          "nome": "Dança",
           "professorContratado": true
         }
       },
@@ -287,17 +275,19 @@
           "Ronaldo"
         ],
         "aula": {
-          "nome": "Crossfit",
-          "professorContratado": true
+          "nome": "Spinning",
+          "funcionariosMinistram": [
+            "Carla"
+          ]
         }
       },
       "turno 3": {
         "funcionariosAlocados": [
-          "Carla",
-          "Marina"
+          "Lucas",
+          "Paula"
         ],
         "aula": {
-          "nome": "Yoga",
+          "nome": "Pilates",
           "funcionariosMinistram": [
             "Ronaldo"
           ]
@@ -305,11 +295,11 @@
       },
       "turno 4": {
         "funcionariosAlocados": [
-          "Carla",
-          "Marina"
+          "Lucas",
+          "Ana"
         ],
         "aula": {
-          "nome": "Yoga",
+          "nome": "Spinning",
           "funcionariosMinistram": [
             "Ronaldo"
           ]
@@ -317,19 +307,15 @@
       },
       "turno 5": {
         "funcionariosAlocados": [
-          "Carla",
-          "Marina"
-        ],
-        "aula": {
-          "nome": "Dança",
-          "professorContratado": true
-        }
+          "Ronaldo",
+          "Paula"
+        ]
       },
       "turno 6": {
         "funcionariosAlocados": [
           "Ronaldo",
-          "Lucas",
-          "Marina"
+          "Carla",
+          "Paula"
         ],
         "aula": {
           "nome": "Dança",
@@ -339,23 +325,34 @@
       "turno 7": {
         "funcionariosAlocados": [
           "Carla",
-          "Marina"
-        ]
+          "Paula"
+        ],
+        "aula": {
+          "nome": "Crossfit",
+          "professorContratado": true
+        }
       },
       "turno 8": {
         "funcionariosAlocados": [
-          "Ronaldo"
-        ]
+          "Lucas"
+        ],
+        "aula": {
+          "nome": "Crossfit",
+          "professorContratado": true
+        }
       }
     },
     "dia 5": {
       "turno 1": {
         "funcionariosAlocados": [
-          "Ronaldo"
+          "Ronaldo",
+          "Ana"
         ],
         "aula": {
-          "nome": "Crossfit",
-          "professorContratado": true
+          "nome": "Spinning",
+          "funcionariosMinistram": [
+            "Carla"
+          ]
         }
       },
       "turno 2": {
@@ -363,17 +360,17 @@
           "Ronaldo"
         ],
         "aula": {
-          "nome": "Crossfit",
+          "nome": "Dança",
           "professorContratado": true
         }
       },
       "turno 3": {
         "funcionariosAlocados": [
           "Carla",
-          "Marina"
+          "Paula"
         ],
         "aula": {
-          "nome": "Yoga",
+          "nome": "Pilates",
           "funcionariosMinistram": [
             "Ronaldo"
           ]
@@ -382,19 +379,17 @@
       "turno 4": {
         "funcionariosAlocados": [
           "Carla",
-          "Marina"
+          "Ana"
         ],
         "aula": {
-          "nome": "Yoga",
-          "funcionariosMinistram": [
-            "Ronaldo"
-          ]
+          "nome": "Crossfit",
+          "professorContratado": true
         }
       },
       "turno 5": {
         "funcionariosAlocados": [
-          "Carla",
-          "Marina"
+          "Ronaldo",
+          "Paula"
         ],
         "aula": {
           "nome": "Dança",
@@ -405,23 +400,29 @@
         "funcionariosAlocados": [
           "Carla",
           "Lucas",
-          "Marina"
+          "Paula"
         ],
         "aula": {
-          "nome": "Dança",
-          "professorContratado": true
+          "nome": "Spinning",
+          "funcionariosMinistram": [
+            "Ronaldo"
+          ]
         }
       },
       "turno 7": {
         "funcionariosAlocados": [
-          "Carla",
-          "Marina"
+          "Ronaldo",
+          "Paula"
         ]
       },
       "turno 8": {
         "funcionariosAlocados": [
           "Carla"
-        ]
+        ],
+        "aula": {
+          "nome": "Crossfit",
+          "professorContratado": true
+        }
       }
     }
   }

@@ -12,7 +12,7 @@
       "salario": 2200,
       "tempoMaximo": 35,
       "experiente": true,
-      "aulas": ["Pilates", "Yoga"]
+      "aulas": ["Pilates", "Spinning"]
     },
     {
       "nome": "Lucas",
@@ -30,7 +30,7 @@
       "nome": "Marina",
       "salario": 1900,
       "tempoMaximo": 38,
-      "aulas": ["Yoga"]
+      "aulas": ["Spinning"]
     },
     {
       "nome": "Bruno",
@@ -38,6 +38,11 @@
       "tempoMaximo": 40,
       "experiente": true,
       "aulas": ["Crossfit"]
+    },
+    {
+      "nome": "Paula",
+      "salario": 1500,
+      "tempoMaximo": 40
     }
   ],
   "dias": 5,
@@ -47,13 +52,14 @@
       "nome": "Dança",
       "alunosEsperados": 15,
       "precoPorAluno": 20,
-      "custoProfessor": 150
+      "custoProfessor": 220
     },
     {
       "nome": "Crossfit",
       "alunosEsperados": 10,
       "precoPorAluno": 50,
-      "custoProfessor": 200
+      "custoProfessor": 400,
+      "minimoSemanal": 1
     },
     {
       "nome": "Pilates",
@@ -61,7 +67,7 @@
       "precoPorAluno": 40
     },
     {
-      "nome": "Yoga",
+      "nome": "Spinning",
       "alunosEsperados": 18,
       "precoPorAluno": 35,
       "minimoSemanal": 3

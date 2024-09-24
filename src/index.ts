@@ -33,7 +33,8 @@ const main = async () => {
       cb: {
         call: console.log,
         each: 1
-      }
+      },
+      tmlim: args.t ? Number(args.t) : undefined
     }
   )
   console.log(`\nSolver finalizado ${'='.repeat(50)}`)

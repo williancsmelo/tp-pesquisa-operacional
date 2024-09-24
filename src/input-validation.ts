@@ -9,6 +9,7 @@ export const inputValidation = yup.object().shape({
     .max(24 / TEMPO_POR_TURNO)
     .of(yup.number().integer().min(0).required())
     .required(),
+  turnosSemAula: yup.array().of(yup.number().integer().min(1).required()).default([]),
   aulas: yup
     .array()
     .of(

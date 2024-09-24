@@ -1,5 +1,7 @@
 export const TEMPO_POR_TURNO = 2
 export const TEMPO_POR_AULA = 1
+export const TEMPO_MAXIMO_DIARIO = 10
+export const MAXIMO_TURNOS_CONSECUTIVOS = 3
 export const AULAS_SIMULTANEAS = 1
 export const AULAS_REPETIDAS_DIARIAS = 2
 export const RELACAO_EXPERIENTE = 50 // porcentagem
